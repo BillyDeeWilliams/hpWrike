@@ -7,6 +7,7 @@
   <meta name='description' content=''>
   <meta name='author' content=''>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <title>Wrike Tuts for the Team!</title>
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,27 +18,98 @@
   </head>
   <body class="ui container">
     <header class="ui text container">
-        <h1 class="ui center">Wrike Tuts</h1>
+        <h1 class="ui center middle aligned">Wrike Tuts</h1>
         <h2>some links for the team!</h2>
     </header>
     <section class="ui two column grid">
       <div id="info" class="six wide column ui card">
+        <h3>Wrike Learning Checklist</h3>
+        <p class="contnet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates repellendus neque iste consectetur, 
+        tenetur eveniet accusantium animi sint ab unde debitis alias impedit voluptate ut culpa voluptas dolorum consequuntur magni.</p>
+        <div class="ui checkbox">
+          <input id="cb-one" type="checkbox" name="getting started with Wrike">
+          <label for="cb-one">Wrike: Getting Started</label>
+        </div>
+        <div class="ui checkbox">
+          <input id="cb-two" type="checkbox" name="Wrike Tutorials">
+          <label for="cb-two">Wrike: Tutorials</label>
+        </div>
+        <div class="ui checkbox">
+          <input id="cb-three" type="checkbox" name="Wrike Best Practices">
+          <label for="cb-three">Wrike: Best Practices <br>
+          <span>DEEP DIVE</span>
+          </label>
+        </div>
       </div>
       <div id="links" class="ten wide column">
         <ul>
-          <li class="ui card">
+          <li class="ui card one" >
             <a href="#">
-              <img class="link-thumb"/><p></p>
+              <div class="ui comments">
+                <div class="comment">
+                  <div class="avatar">
+                    <img src="https://i.ytimg.com/vi/l6LVsgUxLhA/hqdefault.jpg">
+                  </div>
+                  <div class="content">
+                    <div class="author">Wrike: Getting Started</div>
+                    <div class="metadata">
+                      <div class="rating">
+                        12 videos | 
+                      </div> 
+                      <div class="date">Last updated on Feb 12, 2021</div>
+                    </div>
+                    <div class="text">
+                      New to Wrike? These short tutorials will help you jump start your Wrike account: from launching your first project to developing daily Wrike habits
+                    </div>
+                  </div>
+                </div>
+              </div>
             </a>
           </li>
-          <li class="ui card">
+          <li class="ui card two">
             <a href="#">
-              <img class="link-thumb"/><p></p>
+              <div class="ui comments">
+                <div class="comment">
+                  <div class="avatar">
+                    <img src="https://i.ytimg.com/vi/TaM-6xM_yJI/hqdefault.jpg">
+                  </div>
+                  <div class="content">
+                    <div class="author">Wrike: Getting Started</div>
+                    <div class="metadata">
+                      <div class="rating">
+                        12 videos | 
+                      </div> 
+                      <div class="date">Last updated on Feb 12, 2021</div>
+                    </div>
+                    <div class="text">
+                      New to Wrike? These short tutorials will help you jump start your Wrike account: from launching your first project to developing daily Wrike habits
+                    </div>
+                  </div>
+                </div>
+              </div>
             </a>
           </li>
-          <li class="ui card">
+          <li class="ui card three" >
             <a href="#">
-              <img class="link-thumb"/><p></p>
+              <div class="ui comments">
+                <div class="comment">
+                  <div class="avatar">
+                    <img src="https://i.ytimg.com/vi/M-AXaBuQd7c/hqdefault.jpg">
+                  </div>
+                  <div class="content">
+                    <div class="author">Wrike: Getting Started</div>
+                    <div class="metadata">
+                      <div class="rating">
+                        12 videos | 
+                      </div> 
+                      <div class="date">Last updated on Feb 12, 2021</div>
+                    </div>
+                    <div class="text">
+                      New to Wrike? These short tutorials will help you jump start your Wrike account: from launching your first project to developing daily Wrike habits
+                    </div>
+                  </div>
+                </div>
+              </div>
             </a>
           </li>
         </ul>
@@ -45,6 +117,23 @@
     </section>
   </body>
 </html>
+
+<script>
+$("input[type=checkbox]").click(function(e) {
+ console.log(e.target.id); 
+let id = e.target.id.replace('cb-','');
+console.log(id);
+let items = $("li.ui.card");
+for( let i = 0; i < items.length; i++){
+  console.log(items[i].classList);
+
+}
+
+//match to li
+// disable and add activ class
+});
+
+</script>
 
 <style>
 header{
@@ -80,4 +169,37 @@ header{
       opacity: 0.7;
     }
 
+
+    li.ui.card a.active{
+      background-color:#787878;
+      opacity: 0.7;
+    }
+
+    li.ui.card .ui.comments .comment>.avatar~.content {
+    margin-left: 0.5em;
+    margin-top: 1.5em;
+  }
+  li.ui.card .ui.comments .comment .avatar img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  li.ui.card .ui.comments .comment .avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin: 0;
+    float: unset;
+  }
+  li.ui.card .ui.comments .comment {
+    display: flex;
+    height: 100%;
+  }
+
+  li.ui.card .ui.comments {
+    height: 100%;
+  }
 </style>

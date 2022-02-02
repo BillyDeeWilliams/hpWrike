@@ -22,29 +22,35 @@
         <h2>some links for the team!</h2>
     </header>
     <section class="ui two column grid">
-      <div id="info" class="six wide column ui card">
+      <div id="info" class="ui card">
         <h3>Wrike Learning Checklist</h3>
-        <p class="contnet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates repellendus neque iste consectetur, 
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates repellendus neque iste consectetur, 
         tenetur eveniet accusantium animi sint ab unde debitis alias impedit voluptate ut culpa voluptas dolorum consequuntur magni.</p>
-        <div class="ui checkbox">
-          <input id="cb-one" type="checkbox" name="getting started with Wrike">
-          <label for="cb-one">Wrike: Getting Started</label>
-        </div>
-        <div class="ui checkbox">
-          <input id="cb-two" type="checkbox" name="Wrike Tutorials">
-          <label for="cb-two">Wrike: Tutorials</label>
-        </div>
-        <div class="ui checkbox">
-          <input id="cb-three" type="checkbox" name="Wrike Best Practices">
-          <label for="cb-three">Wrike: Best Practices <br>
-          <span>DEEP DIVE</span>
-          </label>
+        <div id="checklist">
+          <p>
+            Checklist
+          </p>  
+          <ul>
+            <li class="ui checkbox">
+              <input id="cb-one" type="checkbox" name="getting started with Wrike">
+              <label for="cb-one">Wrike: Getting Started</label>
+            </li>
+            <li class="ui checkbox">
+              <input id="cb-two" type="checkbox" name="Wrike Tutorials">
+              <label for="cb-two">Tutorials</label>
+            </li>
+            <li class="ui checkbox">
+              <input id="cb-three" type="checkbox" name="Wrike Best Practices">
+              <label for="cb-three">Wrike: Best Practices <br> DEEP DIVE</label>
+            </li>
+            <sub>extra credit</sub>
+          </ul>
         </div>
       </div>
-      <div id="links" class="ten wide column">
+      <div id="links">
         <ul>
           <li class="ui card one" >
-            <a href="#">
+            <a href="#" target="_blank">
               <div class="ui comments">
                 <div class="comment">
                   <div class="avatar">
@@ -67,7 +73,7 @@
             </a>
           </li>
           <li class="ui card two">
-            <a href="#">
+            <a href="#" target="_blank">
               <div class="ui comments">
                 <div class="comment">
                   <div class="avatar">
@@ -90,7 +96,7 @@
             </a>
           </li>
           <li class="ui card three" >
-            <a href="#">
+            <a href="#" target="_blank">
               <div class="ui comments">
                 <div class="comment">
                   <div class="avatar">
@@ -120,13 +126,19 @@
 
 <script>
 $("input[type=checkbox]").click(function(e) {
- console.log(e.target.id); 
+//  console.log(e.target.id); 
+ let label = e.target.nextElementSibling;
+//  console.log(label);
+$(label).toggleClass('strike');
 let id = e.target.id.replace('cb-','');
-console.log(id);
+
 let items = $("li.ui.card");
 for( let i = 0; i < items.length; i++){
   console.log(items[i].classList);
-
+  if (items[i].classList.contains(id)){
+      console.log($(items[i]).find($('a')));
+      $(items[i]).find($('a')).toggleClass('done');
+  }
 }
 
 //match to li
@@ -145,7 +157,72 @@ header{
     height: 500px;
     margin: 10px 0;
     background-color: #78787870;
+    width: 80%;
+    margin: 0 auto;
   }
+  #links{
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+#info h3{
+  margin-bottom: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+}
+#info > p.content{
+  padding: 0 10px 10px 10px;
+    letter-spacing: .08rem;
+    max-height: 200px;
+}
+
+#info ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#info ul li{
+  margin: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#info ul li:nth-last-child(2){
+  background-color: #45a91263;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+#checklist{
+  margin-top:0px;
+}
+
+#checklist > p{
+  width: 75%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  padding: 0 10px;
+}
+#checklist li label{
+  text-transform: uppercase;
+    letter-spacing: 3px;
+}
+#checklist li label.strike{
+  text-decoration: line-through;
+}
+#checklist sub{
+  display: block;
+    margin: 0 auto;
+    color: green;
+    font-size: 1rem;
+}
 
   #links ul{
     margin: 0;
@@ -170,9 +247,10 @@ header{
     }
 
 
-    li.ui.card a.active{
+    li.ui.card a.done{
       background-color:#787878;
       opacity: 0.7;
+      pointer-events: none;
     }
 
     li.ui.card .ui.comments .comment>.avatar~.content {
@@ -202,4 +280,26 @@ header{
   li.ui.card .ui.comments {
     height: 100%;
   }
+@media (max-width: 768px){
+  #info{
+    height: 375px;
+  }
+  #info > p.content{
+  max-height: 125px;
+  }
+  
+}
+@media (min-width: 768px){
+  #info{
+   width: 37.5%;
+   margin: 0 auto;
+  }
+  #links{
+    width: 62.5%;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}
 </style>
+<!-- cookies -->
+<!-- https://stackoverflow.com/questions/31671918/how-to-persist-checkbox-checked-state-after-page-reload -->

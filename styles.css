@@ -1,0 +1,153 @@
+
+header{
+  border-bottom: 1px solid black;
+  margin: 2rem 0;
+}
+
+  #info{
+    height: 500px;
+    margin: 10px 0;
+    background-color: #78787870;
+    width: 80%;
+    margin: 0 auto;
+  }
+  #links{
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+#info h3{
+  margin-bottom: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+}
+#info > p.content{
+  padding: 0 10px 10px 10px;
+    letter-spacing: .08rem;
+    max-height: 200px;
+}
+
+#info ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#info ul li{
+  margin: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#info ul li:nth-last-child(2){
+  background-color: #45a91263;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+#checklist{
+  margin-top:0px;
+}
+
+#checklist > p{
+  width: 75%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  padding: 0 10px;
+}
+#checklist li label{
+  text-transform: uppercase;
+    letter-spacing: 3px;
+}
+#checklist li label.strike{
+  text-decoration: line-through;
+}
+#checklist sub{
+  display: block;
+    margin: 0 auto;
+    color: green;
+    font-size: 1rem;
+}
+
+  #links ul{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+    li.ui.card{
+      height: 155px;
+      width: 100%;
+    }
+
+    li.ui.card a{
+      width: 100%;
+      height: 100%;
+      background-color: #78787870;
+    }
+
+    li.ui.card a:hover{
+      background-color:#787878;
+      opacity: 0.7;
+    }
+
+
+    li.ui.card a.done{
+      background-color:#787878;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    li.ui.card .ui.comments .comment>.avatar~.content {
+    margin-left: 0.5em;
+    margin-top: 1.5em;
+  }
+  li.ui.card .ui.comments .comment .avatar img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  li.ui.card .ui.comments .comment .avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin: 0;
+    float: unset;
+  }
+  li.ui.card .ui.comments .comment {
+    display: flex;
+    height: 100%;
+  }
+
+  li.ui.card .ui.comments {
+    height: 100%;
+  }
+@media (max-width: 768px){
+  #info{
+    height: 375px;
+  }
+  #info > p.content{
+  max-height: 125px;
+  }
+  
+}
+@media (min-width: 768px){
+  #info{
+   width: 37.5%;
+   margin: 0 auto;
+  }
+  #links{
+    width: 62.5%;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}

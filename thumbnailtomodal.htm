@@ -1,0 +1,78 @@
+
+ 
+ <section>
+   <h5 class="label">image preview</h5>
+   <hr>
+ </section>
+<section>
+  <a id="ID0EHD" href="#" class="thumbnail">
+    <img class="thumbnail-image" src="https://journal.emergentpublications.com/wp-content/uploads/2015/11/de8adf66-3683-c412-3cd6-45bc686a4ebe-300x235.png" alt="show full image" title="show full image" />
+  </a>
+
+  <div class="overlay">
+    <div class="modal-wrapper">
+      <div class="modal-image">
+        <div class="modal-header"></div>
+        <img src="https://journal.emergentpublications.com/wp-content/uploads/2015/11/de8adf66-3683-c412-3cd6-45bc686a4ebe.png" alt="full image" title="full image" />
+      </div>
+      <div class="modal-close">X</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.thumbnail-image {
+  border: 3px solid #BBB;
+  border-radius: 4px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay.visible{
+display:block;
+}
+
+.modal-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-image {
+  height: calc(100vh / 1.28);
+    width: 100vh;
+    margin: auto;
+}
+
+.modal-image>img {
+  max-width: 100%;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let thumbnail = document.querySelector('.thumbnail');
+  let close = document.querySelector('.modal-close');
+  let overlay = document.querySelector('.overlay');
+
+  thumbnail.addEventListener('click', function(e) {
+    e.preventDefault();
+    overlay.classList.add('visible')
+  });
+
+  close.addEventListener('click', function(e) {
+    e.preventDefault();
+    overlay.classList.remove('visible')
+  });
+
+
+});
+</script>

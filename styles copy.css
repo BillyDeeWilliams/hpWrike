@@ -15,11 +15,9 @@ header{
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-section.grid{
-  flex-wrap: wrap;
-}
-#checklist, #info{
-    height: 35vh;
+
+  #info{
+    height: 80hv;
     margin: 10px 0;
     background-color: #585858b5;
     width: 80%;
@@ -54,6 +52,26 @@ section.grid{
   color: #390091;
   font-size: 1.1rem;
 }
+#info ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#info ul li{
+  margin: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#info ul li:nth-last-child(2){
+  background-color: #45a91263;
+  border: 1px solid green;
+  border-radius: 5px;
+}
 
 #checklist{
   margin-top:0px;
@@ -78,29 +96,6 @@ section.grid{
 #checklist li label.strike{
   text-decoration: line-through;
 }
-
-#checklist ul{
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 75%;
-  margin: 0 auto;
-}
-
-#checklist ul li{
-margin: 5px;
-padding: 5px;
-font-size: 14px;
-}
-
-#checklist ul li:nth-last-child(2){
-background-color: #45a91263;
-border: 1px solid green;
-border-radius: 5px;
-}
-
-
 #checklist sub{
    display: block;
     margin: 0 auto;
@@ -115,7 +110,7 @@ border-radius: 5px;
   }
 
     li.ui.card{
-      height: 140px;
+      height: 155px;
       width: 100%;
     }
 
@@ -189,9 +184,10 @@ border-radius: 5px;
 
 
 
+ 
 @media (max-width: 768px){
   #info{
-    height: 30vh;
+    height: 375px;
   }
   #info > p.content{
   max-height: 125px;
@@ -199,51 +195,18 @@ border-radius: 5px;
  
   li.ui.card a.done div.done{
     font-size: 3rem;
-    transform: translate(30px, 5px) rotate(320deg);
-  }
-  #links ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  li.ui.card {
-    height: 165px;
-    width: 45% !important;
-    width: 100%;
-    margin: 14px auto !important;
-  }
-  li.ui.card .ui.comments .comment .avatar{
-    width: 100%;
-  }
-  li.ui.card .ui.comments .comment>.avatar~.content{
-    display: none;;
   }
 
 
 }
-@media (min-width: 991px){
+@media (min-width: 768px){
   #info{
-    width: 37.5%;
-    margin: 0;
-    height: 40vh;
+   width: 37.5%;
+   margin: 0 auto;
   }
-  #checklist{
-    width: 37.5%;
-    margin: 0;
-    height: 40vh;
-    float: left;
-    bottom: 40vh;
-    order:3;
-}
   #links{
-    width: 60%;
-    margin: 0;
+    width: 62.5%;
+    margin: 0 auto;
     padding: 5px;
-    margin-right: 0;
-}
-
-  
+  }
 }

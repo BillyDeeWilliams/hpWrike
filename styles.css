@@ -225,17 +225,22 @@ border-radius: 5px;
 
 }
 @media (min-width: 991px){
+  section.ui.grid{
+    position: relative;
+  }
+  
   #info{
     width: 37.5%;
     margin: 0;
     height: 40vh;
+    po
   }
   #checklist{
     width: 37.5%;
     margin: 0;
     height: 40vh;
-    float: left;
-    bottom: 40vh;
+    position: absolute;
+    top: 40vh;
     order:3;
 }
   #links{
